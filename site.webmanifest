@@ -1,0 +1,23 @@
+{
+  "name": "Joanne-Art — portfolio artystyczne",
+  "short_name": "Joanne-Art",
+  "description": "Autorskie murale, obrazy, anioły, rękodzieło i fotografia Joanny.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f3efe7",
+  "theme_color": "#f3efe7",
+  "lang": "pl",
+  "icons": [
+    {
+      "src": "assets/brand/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/brand/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
