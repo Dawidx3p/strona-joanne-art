@@ -6,11 +6,11 @@ const categories = {
     works: [
       ['assets/murale/sciezka-panorama.jpg', 'Kolorowa ścieżka', 'Ogród'],
       ['assets/murale/sciezka-detal.jpg', 'Kolorowa ścieżka — detal', 'Ogród'],
-      ['assets/murale/sciezka-z-artystka.jpg', 'Kolorowa ścieżka — proces', 'Ogród'],
+      ['assets/murale/sciezka-z-artystka.jpg', 'Kolorowa ścieżka', 'Ogród'],
       ['assets/murale/orchidee-gotowy-mural.jpg', 'Orchidee', 'Wnętrze'],
-      ['assets/murale/orchidee-z-artystka.jpg', 'Orchidee — proces', 'Wnętrze'],
+      ['assets/murale/orchidee-z-artystka.jpg', 'Orchidee', 'Wnętrze'],
       ['assets/murale/piotr-pan-panorama.jpg', 'Piotruś Pan', 'Pokój dziecięcy'],
-      ['assets/murale/piotr-pan-z-artystka.jpg', 'Piotruś Pan — proces', 'Pokój dziecięcy'],
+      ['assets/murale/piotr-pan-z-artystka.jpg', 'Piotruś Pan', 'Pokój dziecięcy'],
       ['assets/murale/bajkowy-las-panorama.jpg', 'Bajkowy las', 'Przestrzeń dziecięca'],
       ['assets/murale/bajkowy-las-detal.jpg', 'Bajkowy las — detal', 'Przestrzeń dziecięca'],
       ['assets/murale/biblioteka-sowa.png', 'Sowa w bibliotece', 'Biblioteka'],
@@ -54,7 +54,7 @@ const categories = {
     description: 'Kadry odnajdywane blisko — w lesie, na łące i w zmieniającym się świetle. Fotografia jako ćwiczenie patrzenia.',
     works: [
       ['assets/fotografia/laka-o-zachodzie.jpg', 'Łąka o zachodzie', 'Krajobraz'],
-      ['assets/fotografia/sowa-w-lesie.jpg', 'Sowa w zimowym lesie', 'Natura'],
+      ['assets/fotografia/sowa-w-lesie.jpg', 'Bella w zimowym lesie', 'Natura'],
       ['assets/fotografia/slonce-w-trawach.jpg', 'Słońce w trawach', 'Detal'],
       ['assets/fotografia/zimowy-zachod.jpg', 'Zimowy zachód', 'Krajobraz'],
       ['assets/fotografia/burzowe-niebo.jpg', 'Burzowe niebo', 'Krajobraz'],
