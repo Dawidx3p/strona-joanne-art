@@ -28,11 +28,12 @@
   <link rel="icon" href="favicon.ico" sizes="16x16 32x32">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preload" as="image" href="assets/hero-sciezka.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/murale/bajkowy-las-panorama.jpg" media="(min-width: 721px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/murale/orchidee-gotowy-mural.jpg" media="(max-width: 720px)" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260817">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -68,7 +69,10 @@
 
   <main>
     <section class="hero" id="start">
-      <img src="assets/hero-sciezka.jpg" alt="Kolorowo malowana ścieżka w ogrodzie" fetchpriority="high" decoding="async">
+      <picture class="hero-media">
+        <source media="(max-width: 720px)" srcset="assets/murale/orchidee-gotowy-mural.jpg">
+        <img src="assets/murale/bajkowy-las-panorama.jpg" alt="Artystyczny mural autorstwa Joanne-Art" fetchpriority="high" decoding="async">
+      </picture>
       <div class="hero-shade"></div>
       <div class="hero-copy">
         <p class="eyebrow light">Joanne-Art · sztuka tworzona ręcznie</p>
@@ -157,6 +161,6 @@
   <footer class="footer section-shell"><a class="brand" href="#start">Joanne-Art</a><p>Murale · obrazy · rękodzieło · fotografia</p><p>© 2026 Joanne-Art</p></footer>
 
   <div class="lightbox" role="dialog" aria-modal="true" aria-label="Podgląd realizacji" aria-hidden="true"><button class="lightbox-close" type="button" aria-label="Zamknij podgląd">×</button><button class="lightbox-arrow prev" type="button" aria-label="Poprzednie zdjęcie">‹</button><img alt=""><button class="lightbox-arrow next" type="button" aria-label="Następne zdjęcie">›</button><p class="lightbox-caption"></p></div>
-  <script src="script.js"></script>
+  <script src="script.js?v=20260817"></script>
 </body>
 </html>
