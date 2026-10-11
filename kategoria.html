@@ -29,32 +29,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260817">
+  <link rel="stylesheet" href="style.css?v=20261011-portraits">
 </head>
 <body class="category-page">
+  <a class="skip-link" href="#main-content">Przejdź do treści</a>
   <header class="site-header category-header">
     <a class="brand" href="index.html" aria-label="Joanne-Art — strona główna">Joanne-Art</a>
     <nav class="nav" id="main-nav" aria-label="Główna nawigacja">
       <a href="index.html#tworczosc"><span>01</span>Twórczość</a>
-      <a href="index.html#realizacje"><span>02</span>Realizacje</a>
+      <a href="index.html#projekty"><span>02</span>Historie projektów</a>
       <a href="index.html#o-mnie"><span>03</span>O mnie</a>
       <a class="nav-contact" href="index.html#kontakt"><span>04</span>Kontakt</a>
     </nav>
     <button class="menu-button" type="button" aria-label="Otwórz menu" aria-controls="main-nav" aria-expanded="false"><span></span><span></span><span></span></button>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <section class="category-hero section-shell">
       <a class="back-link" href="index.html#tworczosc">← Wszystkie kategorie</a>
       <p class="eyebrow" id="category-kicker">Twórczość Joanne-Art</p>
       <h1 id="category-title">Murale</h1>
       <p id="category-description"></p>
-      <div class="category-switcher" id="category-switcher" aria-label="Wybierz kategorię">
-        <a href="murale.html">Murale</a><a href="obrazy.html">Obrazy</a><a href="anioly.html">Anioły</a><a href="rekodzielo.html">Rękodzieło</a><a href="fotografia.html">Fotografia</a>
-      </div>
+
     </section>
-    <section class="category-gallery section-shell" aria-live="polite">
-      <div class="category-count"><span id="category-count">0</span> wybranych prac</div>
+      <nav class="category-switcher section-shell" id="category-switcher" aria-label="Wybierz kategorię">
+        <a href="murale.html">Murale</a><a href="obrazy.html">Obrazy</a><a href="anioly.html">Anioły</a><a href="rekodzielo.html">Rękodzieło</a><a href="fotografia.html">Fotografia</a>
+      </nav>
+    <section class="category-gallery section-shell" aria-label="Galeria prac">
+      <p class="category-count" id="category-count" role="status">Prace z kolekcji</p>
+      <p class="gallery-hint">Wybierz zdjęcie, aby zobaczyć je w całości.</p>
       <div class="category-grid" id="category-grid"></div>
     </section>
     <section class="contact section-shell category-contact">
@@ -67,6 +70,7 @@
 
   <footer class="footer section-shell"><a class="brand" href="index.html">Joanne-Art</a><p>Murale · obrazy · rękodzieło · fotografia</p><p>© 2026 Joanne-Art</p></footer>
   <div class="lightbox" role="dialog" aria-modal="true" aria-label="Podgląd pracy" aria-hidden="true"><button class="lightbox-close" type="button" aria-label="Zamknij podgląd">×</button><button class="lightbox-arrow prev" type="button" aria-label="Poprzednie zdjęcie">‹</button><img alt=""><button class="lightbox-arrow next" type="button" aria-label="Następne zdjęcie">›</button><p class="lightbox-caption"></p></div>
-  <script src="category.js?v=20260817"></script>
+  <script src="ui.js?v=20261011"></script>
+  <script src="category.js?v=20261011-posters"></script>
 </body>
 </html>
