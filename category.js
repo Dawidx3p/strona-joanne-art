@@ -17,7 +17,12 @@ const categories = {
       ['assets/murale/biblioteka-wejscie.jpg', 'Baśniowe wejście', 'Biblioteka'],
       ['assets/murale/lesny-staw.jpg', 'Leśny staw', 'Wnętrze'],
       ['assets/murale/tyranozaur.jpg', 'Tyranozaur', 'Pokój dziecięcy'],
-      ['assets/murale/puchatek-na-szkle.jpg', 'Kubuś Puchatek na szkle', 'Witryna']
+      ['assets/murale/puchatek-na-szkle.jpg', 'Kubuś Puchatek na szkle', 'Witryna'],
+      ["assets/murale/sloneczniki-szkola-tymowa.jpg", "Słoneczniki dla szkoły w Tymowej", "Szkoła"],
+      ["assets/murale/sloneczniki-szkola-detal.jpg", "Słoneczniki — detal z tablicą", "Szkoła"],
+      ["assets/murale/sloneczniki-szkola-kwiaty.jpg", "Słoneczniki — detal kwiatów", "Szkoła"],
+      ["assets/murale/sloneczniki-szkola-w-trakcie.jpg", "Słoneczniki — podczas malowania", "Szkoła"],
+      ["assets/murale/sloneczniki-szkola-z-artystka.jpg", "Słoneczniki — z artystką", "Szkoła"]
     ]
   },
   obrazy: {
@@ -32,7 +37,15 @@ const categories = {
       ['assets/obrazy/baszta.jpg', 'Baszta', 'Pejzaż'],
       ['assets/obrazy/postac-z-ogniem.jpg', 'Postać z ogniem', 'Fantastyka'],
       ['assets/obrazy/portret-kobiety.jpg', 'Portret kobiety', 'Portret'],
-      ['assets/obrazy/dziewczynka-z-kwiatami.jpg', 'Dziewczynka z kwiatami', 'Obraz na drewnie']
+      ['assets/obrazy/dziewczynka-z-kwiatami.jpg', 'Dziewczynka z kwiatami', 'Obraz na drewnie'],
+      ["assets/obrazy/portret-w-ciemnych-wlosach.jpg", "Portret w ciemnych włosach", "Portret"],
+      ["assets/obrazy/portret-w-blekitach.jpg", "Portret w błękitach", "Obraz na drewnie"],
+      ["assets/obrazy/portret-wsrod-lisci.jpg", "Portret wśród liści", "Rysunek"],
+      ["assets/obrazy/skrzydlata-dziewczynka.jpg", "Skrzydlata dziewczynka", "Rysunek"],
+      ["assets/obrazy/portrety-z-motylem.jpg", "Portrety z motylem", "Kompozycja"],
+      ["assets/obrazy/portret-olowkiem.jpg", "Portret ołówkiem", "Rysunek"],
+      ["assets/obrazy/para-ze-skrzydlami.jpg", "Para ze skrzydłami", "Kompozycja"],
+      ["assets/obrazy/portret-w-zamysleniu.jpg", "Portret w zamyśleniu", "Rysunek"]
     ]
   },
   anioly: {
@@ -46,7 +59,17 @@ const categories = {
       ['assets/anioly/aniol-kwiaty-z-artystka.jpg', 'Anioł w kwiatach — skala', 'Kolekcja kwiatowa'],
       ['assets/anioly/aniol-kwiaty-detal.jpg', 'Anioł w kwiatach — detal', 'Kolekcja kwiatowa'],
       ['assets/anioly/aniol-natura.jpg', 'Anioł natury', 'Kolekcja natura'],
-      ['assets/anioly/aniol-natura-detal.jpg', 'Anioł natury — detal', 'Kolekcja natura']
+      ['assets/anioly/aniol-natura-detal.jpg', 'Anioł natury — detal', 'Kolekcja natura'],
+      ["assets/anioly/aniol-jesienny.jpg", "Jesienny anioł", "Anioły na płótnie"],
+      ["assets/anioly/aniol-z-klosami.jpg", "Anioł z kłosami", "Anioły na drewnie"],
+      ["assets/anioly/aniol-z-dzieckiem.jpg", "Anioł z dzieckiem", "Anioły na płótnie"],
+      ["assets/anioly/aniol-z-perlami.jpg", "Anioł z perłami", "Anioły na drewnie"],
+      ["assets/anioly/aniol-z-ptakiem.jpg", "Anioł z ptakiem", "Anioły na płótnie"],
+      ["assets/anioly/jasnowlosy-aniol.jpg", "Jasnowłosy anioł", "Anioły na płótnie"],
+      ["assets/anioly/aniol-z-motylem.jpg", "Anioł z motylem", "Anioły na płótnie"],
+      ["assets/anioly/aniol-ognia.jpg", "Anioł ognia", "Anioły na płótnie"],
+      ["assets/anioly/aniol-w-czerwieni.jpg", "Anioł w czerwieni", "Anioły na płótnie"],
+      ["assets/anioly/skrzydlata-postac-szkic.jpg", "Skrzydlata postać — szkic", "Rysunek"]
     ]
   },
   fotografia: {
@@ -80,7 +103,7 @@ const type = categories[pageType] ? pageType : (categories[params.get('typ')] ? 
 const category = categories[type];
 const grid = document.querySelector('#category-grid');
 let cards = [];
-const imageSizes = {"assets/murale/sciezka-panorama.jpg": [1536, 2048], "assets/murale/sciezka-detal.jpg": [2048, 1536], "assets/murale/sciezka-z-artystka.jpg": [1536, 2048], "assets/murale/orchidee-gotowy-mural.jpg": [1316, 2048], "assets/murale/orchidee-z-artystka.jpg": [1536, 2048], "assets/murale/piotr-pan-panorama.jpg": [2000, 1173], "assets/murale/piotr-pan-z-artystka.jpg": [960, 720], "assets/murale/bajkowy-las-panorama.jpg": [2048, 1119], "assets/murale/bajkowy-las-detal.jpg": [2048, 1536], "assets/murale/biblioteka-sowa.png": [1541, 1021], "assets/murale/biblioteka-wejscie.jpg": [1848, 1224], "assets/murale/lesny-staw.jpg": [1915, 800], "assets/murale/tyranozaur.jpg": [960, 540], "assets/murale/puchatek-na-szkle.jpg": [1536, 2048], "assets/obrazy/zloty-portret.jpg": [1378, 1923], "assets/obrazy/portret-kwiatowy.jpg": [1536, 2048], "assets/obrazy/dziewczyna-sowa-kon.jpg": [1536, 2048], "assets/obrazy/pory-roku-lato.jpg": [1739, 2048], "assets/obrazy/pory-roku-zima.jpeg": [1856, 2048], "assets/obrazy/baszta.jpg": [2048, 1536], "assets/obrazy/postac-z-ogniem.jpg": [1536, 2048], "assets/obrazy/portret-kobiety.jpg": [1011, 1539], "assets/obrazy/dziewczynka-z-kwiatami.jpg": [2048, 1981], "assets/anioly/aniol-kolorowy.jpg": [1532, 2048], "assets/anioly/aniol-z-kotem.jpg": [1532, 2048], "assets/anioly/aniol-kolorowy-detal.jpg": [1532, 2048], "assets/anioly/aniol-kwiaty.jpg": [1536, 2048], "assets/anioly/aniol-kwiaty-z-artystka.jpg": [1536, 2048], "assets/anioly/aniol-kwiaty-detal.jpg": [1536, 2048], "assets/anioly/aniol-natura.jpg": [1536, 2048], "assets/anioly/aniol-natura-detal.jpg": [673, 2048], "assets/fotografia/laka-o-zachodzie.jpg": [2048, 1322], "assets/fotografia/sowa-w-lesie.jpg": [2048, 922], "assets/fotografia/slonce-w-trawach.jpg": [2048, 1596], "assets/fotografia/zimowy-zachod.jpg": [2048, 1542], "assets/fotografia/burzowe-niebo.jpg": [2048, 1542], "assets/fotografia/konwalia.jpg": [1466, 1156], "assets/fotografia/dziupla-drzewa.jpg": [2048, 1536], "assets/fotografia/rosa-na-trawie.jpg": [1350, 1084]};
+const imageSizes = {"assets/murale/sciezka-panorama.jpg": [1536, 2048], "assets/murale/sciezka-detal.jpg": [2048, 1536], "assets/murale/sciezka-z-artystka.jpg": [1536, 2048], "assets/murale/orchidee-gotowy-mural.jpg": [1316, 2048], "assets/murale/orchidee-z-artystka.jpg": [1536, 2048], "assets/murale/piotr-pan-panorama.jpg": [2000, 1173], "assets/murale/piotr-pan-z-artystka.jpg": [960, 720], "assets/murale/bajkowy-las-panorama.jpg": [2048, 1119], "assets/murale/bajkowy-las-detal.jpg": [2048, 1536], "assets/murale/biblioteka-sowa.png": [1541, 1021], "assets/murale/biblioteka-wejscie.jpg": [1848, 1224], "assets/murale/lesny-staw.jpg": [1915, 800], "assets/murale/tyranozaur.jpg": [960, 540], "assets/murale/puchatek-na-szkle.jpg": [1536, 2048], "assets/obrazy/zloty-portret.jpg": [1378, 1923], "assets/obrazy/portret-kwiatowy.jpg": [1536, 2048], "assets/obrazy/dziewczyna-sowa-kon.jpg": [1536, 2048], "assets/obrazy/pory-roku-lato.jpg": [1739, 2048], "assets/obrazy/pory-roku-zima.jpeg": [1856, 2048], "assets/obrazy/baszta.jpg": [2048, 1536], "assets/obrazy/postac-z-ogniem.jpg": [1536, 2048], "assets/obrazy/portret-kobiety.jpg": [1011, 1539], "assets/obrazy/dziewczynka-z-kwiatami.jpg": [2048, 1981], "assets/anioly/aniol-kolorowy.jpg": [1532, 2048], "assets/anioly/aniol-z-kotem.jpg": [1532, 2048], "assets/anioly/aniol-kolorowy-detal.jpg": [1532, 2048], "assets/anioly/aniol-kwiaty.jpg": [1536, 2048], "assets/anioly/aniol-kwiaty-z-artystka.jpg": [1536, 2048], "assets/anioly/aniol-kwiaty-detal.jpg": [1536, 2048], "assets/anioly/aniol-natura.jpg": [1536, 2048], "assets/anioly/aniol-natura-detal.jpg": [673, 2048], "assets/fotografia/laka-o-zachodzie.jpg": [2048, 1322], "assets/fotografia/sowa-w-lesie.jpg": [2048, 922], "assets/fotografia/slonce-w-trawach.jpg": [2048, 1596], "assets/fotografia/zimowy-zachod.jpg": [2048, 1542], "assets/fotografia/burzowe-niebo.jpg": [2048, 1542], "assets/fotografia/konwalia.jpg": [1466, 1156], "assets/fotografia/dziupla-drzewa.jpg": [2048, 1536], "assets/fotografia/rosa-na-trawie.jpg": [1350, 1084], "assets/murale/sloneczniki-szkola-tymowa.jpg": [1350, 1800], "assets/murale/sloneczniki-szkola-detal.jpg": [1350, 1800], "assets/murale/sloneczniki-szkola-kwiaty.jpg": [1350, 1800], "assets/murale/sloneczniki-szkola-w-trakcie.jpg": [1350, 1800], "assets/murale/sloneczniki-szkola-z-artystka.jpg": [1350, 1800], "assets/anioly/aniol-jesienny.jpg": [1247, 1800], "assets/anioly/aniol-z-klosami.jpg": [650, 1800], "assets/anioly/aniol-z-dzieckiem.jpg": [935, 999], "assets/anioly/aniol-z-perlami.jpg": [666, 1432], "assets/anioly/aniol-z-ptakiem.jpg": [1800, 1528], "assets/anioly/jasnowlosy-aniol.jpg": [1537, 1800], "assets/anioly/aniol-z-motylem.jpg": [1448, 1800], "assets/anioly/aniol-ognia.jpg": [1214, 1800], "assets/anioly/aniol-w-czerwieni.jpg": [1209, 1800], "assets/anioly/skrzydlata-postac-szkic.jpg": [1355, 1800], "assets/obrazy/portret-w-ciemnych-wlosach.jpg": [902, 1800], "assets/obrazy/portret-w-blekitach.jpg": [1784, 1734], "assets/obrazy/portret-wsrod-lisci.jpg": [1295, 1800], "assets/obrazy/skrzydlata-dziewczynka.jpg": [1522, 1536], "assets/obrazy/portrety-z-motylem.jpg": [1800, 1068], "assets/obrazy/portret-olowkiem.jpg": [1800, 1575], "assets/obrazy/para-ze-skrzydlami.jpg": [1225, 1800], "assets/obrazy/portret-w-zamysleniu.jpg": [1738, 1800]};
 
 if (!pageType) {
   document.title = `${category.title} — Joanne-Art`;
@@ -100,8 +123,9 @@ document.querySelector('#category-switcher').innerHTML = Object.entries(categori
 
 // Only explicitly related views are grouped. Separate works stay separate.
 const groupIndexes = {
-  murale: [[0, 1, 2], [3, 4], [5, 6], [7, 8], [9], [10], [11], [12], [13]],
-  anioly: [[0, 2], [1], [3, 4, 5], [6, 7]]
+  murale: [[14, 15, 16, 17, 18], [0, 1, 2], [3, 4], [5, 6], [7, 8], [9], [10], [11], [12], [13]],
+  anioly: [[8], [9], [10], [11], [12], [13], [14], [15], [16], [17], [0, 2], [1], [3, 4, 5], [6, 7]],
+  obrazy: [[10], [16], [14], [11], [9], [15], [13], [12], [0], [1], [2], [3], [4], [5], [6], [7], [8]]
 };
 const viewLabels = {
   'assets/murale/sciezka-detal.jpg': 'Kolorowa ścieżka — detal',
@@ -168,11 +192,19 @@ const workNavigation = document.createElement('nav');
 workNavigation.className = 'work-navigation';
 workNavigation.setAttribute('aria-label', 'Przewijanie prac');
 workNavigation.hidden = true;
-workNavigation.innerHTML = '<button type="button" class="work-previous" aria-label="Poprzednia praca">↑</button><span class="work-position" role="status" aria-live="polite"></span><button type="button" class="work-next" aria-label="Następna praca">↓</button>';
+workNavigation.innerHTML = '<button type="button" class="work-previous" aria-label="Poprzednia praca">↑</button><select class="work-select" aria-label="Wybierz pracę"></select><span class="work-position" role="status" aria-live="polite"></span><button type="button" class="work-next" aria-label="Następna praca">↓</button>';
 document.body.append(workNavigation);
 const previousWork = workNavigation.querySelector('.work-previous');
 const nextWork = workNavigation.querySelector('.work-next');
 const workPosition = workNavigation.querySelector('.work-position');
+const workSelect = workNavigation.querySelector('.work-select');
+stages.forEach((stage, index) => {
+  const option = document.createElement('option');
+  option.value = String(index);
+  option.textContent = stage.querySelector('h2').textContent;
+  workSelect.append(option);
+});
+workSelect.addEventListener('change', () => centerWork(Number(workSelect.value)));
 let activeWork = 0;
 let scrollFrame = 0;
 
@@ -196,6 +228,7 @@ function updateWorkNavigation() {
   });
   const label = `${activeWork + 1} / ${stages.length}`;
   if (workPosition.textContent !== label) workPosition.textContent = label;
+  if (document.activeElement !== workSelect) workSelect.value = String(activeWork);
   previousWork.disabled = activeWork === 0;
   nextWork.disabled = activeWork === stages.length - 1;
 }
