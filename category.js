@@ -184,10 +184,24 @@ const activeCategory = switcher.querySelector('[aria-current="page"]');
 if (activeCategory) switcher.scrollLeft = Math.max(0, activeCategory.offsetLeft - switcher.offsetLeft - (switcher.clientWidth - activeCategory.offsetWidth) / 2);
 JoanneUI.init({ cards: () => cards });
 
-// Native scroll snapping and explicit controls share the same visible center.
+// Photo collections use the gallery overview; video works keep their navigation.
 grid.classList.add('work-stages');
 const stages = [...grid.querySelectorAll('.collection-work, .video-card')];
 stages.forEach(stage => stage.classList.add('gallery-stage'));
+if (category.works) {
+  document.body.classList.add('mosaic-view');
+  document.querySelector('.gallery-hint').textContent = 'Każdy kafel to osobna praca. Powiększ zdjęcie, aby obejrzeć je z bliska; małe miniatury pokazują dodatkowe ujęcia tego samego projektu.';
+  let module;
+  stages.forEach((stage, index) => {
+    if (index % 3 === 0) {
+      module = document.createElement('div');
+      module.className = 'gallery-module';
+      module.dataset.count = String(Math.min(3, stages.length - index));
+      grid.append(module);
+    }
+    module.append(stage);
+  });
+} else {
 const workNavigation = document.createElement('nav');
 workNavigation.className = 'work-navigation';
 workNavigation.setAttribute('aria-label', 'Przewijanie prac');
@@ -251,80 +265,4 @@ window.addEventListener('resize', scheduleWorkNavigation);
 new MutationObserver(scheduleWorkNavigation).observe(document.body, { attributes: true, attributeFilter: ['class'] });
 updateWorkNavigation();
 
-// Portraits have room for a preview of nearby portrait works.
-const portraitWorks = stages.map((stage, index) => ({ stage, index, cover: stage.querySelector('.collection-cover') })).filter(item => {
-  const img = item.cover?.querySelector('img');
-  return img && Number(img.getAttribute('height')) > Number(img.getAttribute('width'));
-});
-function portraitPreview(item) {
-  const cover = item.cover;
-  const source = cover.querySelector('img');
-  const title = item.stage.querySelector('h2').textContent;
-  const link = document.createElement('a');
-  link.className = 'portrait-preview';
-  link.href = `#work-${item.index}`;
-  link.setAttribute('aria-label', `Przejdź do pracy: ${title}`);
-  const img = source.cloneNode();
-  img.alt = title;
-  const label = document.createElement('span');
-  label.textContent = title;
-  link.append(img, label);
-  link.addEventListener('click', event => {
-    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    centerWork(item.index);
-  });
-  return link;
-}
-portraitWorks.forEach((item, position) => {
-  if (portraitWorks.length < 2) return;
-  const shelf = document.createElement('div');
-  shelf.className = 'portrait-shelf';
-  const track = document.createElement('div');
-  track.className = 'portrait-track';
-  const placeholder = () => {
-    const space = document.createElement('div');
-    space.className = 'portrait-placeholder';
-    space.setAttribute('aria-hidden', 'true');
-    return space;
-  };
-  item.stage.classList.add('portrait-stage');
-  item.cover.before(shelf);
-  track.append(position > 0 ? portraitPreview(portraitWorks[position - 1]) : placeholder());
-  track.append(item.cover);
-  track.append(position < portraitWorks.length - 1 ? portraitPreview(portraitWorks[position + 1]) : placeholder());
-  shelf.append(track);
-});
-scheduleWorkNavigation();
-
-// A curated overview and the existing centered viewing mode share the same works.
-if (category.works) {
-  const toolbar = document.createElement('div');
-  toolbar.className = 'gallery-layout';
-  toolbar.setAttribute('role', 'group');
-  toolbar.setAttribute('aria-label', 'Sposób oglądania galerii');
-  toolbar.innerHTML = '<span>Oglądaj prace</span><button type="button" data-layout="mosaic" aria-pressed="true">Galeria</button><button type="button" data-layout="focus" aria-pressed="false">Pojedynczo</button>';
-  grid.before(toolbar);
-  stages.forEach((stage, index) => {
-    if (index % 3 === 0) {
-      const module = document.createElement('div');
-      module.className = 'gallery-module';
-      module.dataset.count = String(Math.min(3, stages.length - index));
-      grid.append(module);
-    }
-    grid.lastElementChild.append(stage);
-  });
-  function setLayout(layout) {
-    document.body.classList.toggle('mosaic-view', layout === 'mosaic');
-    toolbar.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.layout === layout)));
-    document.querySelector('.gallery-hint').textContent = layout === 'mosaic'
-      ? 'Każdy kafel to osobna praca. Powiększ zdjęcie, aby obejrzeć je z bliska; małe miniatury pokazują dodatkowe ujęcia tego samego projektu.'
-      : 'Przewijaj między pracami lub wybierz tytuł z listy. Otwórz zdjęcie, aby zobaczyć je z bliska.';
-    scheduleWorkNavigation();
-  }
-  toolbar.addEventListener('click', event => {
-    const button = event.target.closest('button[data-layout]');
-    if (button) setLayout(button.dataset.layout);
-  });
-  setLayout('mosaic');
 }

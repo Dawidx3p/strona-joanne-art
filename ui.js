@@ -13,6 +13,18 @@ window.JoanneUI = {
     const main = document.querySelector('main');
     const footer = document.querySelector('footer');
     const skipLink = document.querySelector('.skip-link');
+    const contactButton = document.createElement('a');
+    contactButton.className = 'mobile-contact-button';
+    contactButton.href = document.querySelector('#kontakt') ? '#kontakt' : 'index.html#kontakt';
+    contactButton.innerHTML = 'Porozmawiajmy o projekcie <span aria-hidden="true">↗</span>';
+    document.body.append(contactButton);
+    document.body.classList.add('has-mobile-contact');
+    const contactSection = document.querySelector('.contact');
+    if (contactSection) {
+      new IntersectionObserver(([entry]) => {
+        contactButton.hidden = entry.isIntersecting;
+      }, { threshold: 0 }).observe(contactSection);
+    }
     let gallery = [];
     let currentIndex = 0;
     let opener;
