@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261022-header">
+  <link rel="stylesheet" href="style.css?v=20261026-gallery">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -58,8 +58,8 @@
   <header class="site-header">
     <a class="brand" href="#start" aria-label="Joanne-Art — strona główna">Joanne-Art</a>
     <nav class="nav" id="main-nav" aria-label="Główna nawigacja">
-      <a href="#tworczosc"><span>01</span>Twórczość</a>
-      <a href="#projekty"><span>02</span>Historie projektów</a>
+      <a href="#projekty"><span>01</span>Historie projektów</a>
+      <a href="#tworczosc"><span>02</span>Twórczość</a>
       <a href="#o-mnie"><span>03</span>O mnie</a>
       <a class="nav-contact" href="#kontakt"><span>04</span>Kontakt</a>
     </nav>
@@ -80,13 +80,44 @@
           <h1>Sztuka, która ożywia przestrzeń.</h1>
           <p class="hero-lead">Autorskie murale, obrazy i anioły. Tworzone ręcznie, z uważnością na miejsce i ludzi.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#tworczosc">Odkryj prace <span aria-hidden="true">↓</span></a>
+            <a class="button primary" href="#projekty">Odkryj prace <span aria-hidden="true">↓</span></a>
             <a class="button outline" href="#kontakt">Zapytaj o projekt</a>
           </div>
           <div class="hero-shortcuts" aria-label="Popularne kategorie"><a href="murale.html">Murale <span aria-hidden="true">↗</span></a><a href="obrazy.html">Obrazy <span aria-hidden="true">↗</span></a><a href="anioly.html">Anioły <span aria-hidden="true">↗</span></a></div>
       </div>
       <a class="hero-work-link hero-work-desktop" href="obrazy.html"><span>Na pierwszym planie</span>Portret w błękitach <span aria-hidden="true">↗</span></a>
       <a class="hero-work-link hero-work-mobile" href="anioly.html"><span>Na pierwszym planie</span>Jesienny anioł <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="featured section-shell story-editorial" id="projekty">
+      <div class="section-head"><div><p class="eyebrow">Z bliska i w całości</p><h2>Historie projektów</h2></div><p class="section-intro">Najpierw gotowa praca. Potem detale, skala i chwile z malowania. Zajrzyj bliżej — każde zdjęcie możesz powiększyć.</p></div>
+      <article class="project-story" aria-labelledby="sloneczniki-title">
+        <div class="project-copy">
+          <div><p class="eyebrow"><span class="story-index">01</span> Mural w szkole · Tymowa</p><h3 id="sloneczniki-title">Słoneczniki — z sercem dla szkoły</h3></div>
+          <p>Słoneczniki i roślinne detale otaczają nazwę szkoły oraz pamiątkową tablicę. Zobacz gotową kompozycję i moment jej powstawania.</p>
+        </div>
+        <div class="project-image story-gallery" aria-label="Zdjęcia projektu Słoneczniki dla szkoły">
+          <a class="story-photo project-cover" href="assets/murale/sloneczniki-szkola-tymowa.jpg" data-project="sloneczniki" data-title="Słoneczniki dla szkoły w Tymowej — gotowy mural"><img src="assets/murale/sloneczniki-szkola-tymowa.jpg" alt="Gotowy mural ze słonecznikami i nazwą szkoły w Tymowej" width="1350" height="1800" loading="lazy" decoding="async"><span class="story-caption"><span>Gotowa praca</span><span>Powiększ ↗</span></span></a>
+          <div class="story-details">
+            <a class="story-photo" href="assets/murale/sloneczniki-szkola-detal.jpg" data-project="sloneczniki" data-title="Słoneczniki dla szkoły w Tymowej — detal z tablicą"><img src="assets/murale/sloneczniki-szkola-detal.jpg" alt="Słoneczniki wokół pamiątkowej tablicy" width="1350" height="1800" loading="lazy" decoding="async"><span class="story-caption"><span>Detal kompozycji</span><span aria-hidden="true">↗</span></span></a>
+            <a class="story-photo" href="assets/murale/sloneczniki-szkola-w-trakcie.jpg" data-project="sloneczniki" data-title="Słoneczniki dla szkoły w Tymowej — podczas malowania"><img src="assets/murale/sloneczniki-szkola-w-trakcie.jpg" alt="Joanna malująca mural na szkolnej ścianie" width="1350" height="1800" loading="lazy" decoding="async"><span class="story-caption"><span>Podczas malowania</span><span aria-hidden="true">↗</span></span></a>
+          </div>
+        </div>
+        <div class="story-cta"><a class="text-link" href="murale.html">Zobacz wszystkie murale <span>→</span></a></div>
+      </article>
+      <article class="project-story reverse" aria-labelledby="orchidee-title">
+        <div class="project-copy">
+          <div><p class="eyebrow"><span class="story-index">02</span> Mural we wnętrzu</p><h3 id="orchidee-title">Orchidee — ściana zamieniona w ogród</h3></div>
+          <p>Wielkoformatowe kwiaty malowane bezpośrednio na ścianie. Ujęcie z Joanną pozwala zobaczyć skalę całej kompozycji.</p>
+        </div>
+        <div class="project-image story-gallery" aria-label="Zdjęcia projektu Orchidee">
+          <a class="story-photo project-cover" href="assets/murale/orchidee-gotowy-mural.jpg" data-project="orchidee" data-title="Orchidee — gotowy mural"><img src="assets/murale/orchidee-gotowy-mural.jpg" alt="Gotowy mural z białymi orchideami" width="1316" height="2048" loading="lazy" decoding="async"><span class="story-caption"><span>Gotowa praca</span><span>Powiększ ↗</span></span></a>
+          <div class="story-details">
+            <a class="story-photo" href="assets/murale/orchidee-z-artystka.jpg" data-project="orchidee" data-title="Orchidee — z artystką"><img src="assets/murale/orchidee-z-artystka.jpg" alt="Joanna przy muralu orchidei, pokazująca skalę malowidła" width="1536" height="2048" loading="lazy" decoding="async"><span class="story-caption"><span>Joanna i skala muralu</span><span aria-hidden="true">↗</span></span></a>
+          </div>
+        </div>
+        <div class="story-cta"><a class="text-link" href="#kontakt">Porozmawiajmy o Twojej ścianie <span>→</span></a></div>
+      </article>
     </section>
 
     <section class="disciplines section-shell" id="tworczosc">
@@ -101,31 +132,6 @@
         <a class="discipline-card" href="rekodzielo.html"><img src="assets/rekodzielo/kubek-smok.jpg" alt="Ręcznie wykonany kubek ze smokiem" loading="lazy" decoding="async"><span class="discipline-number">04</span><div><p>Przedmioty z charakterem</p><h3>Rękodzieło</h3><span>Zobacz realizacje →</span></div></a>
         <a class="discipline-card large" href="fotografia.html"><img src="assets/fotografia/zimowy-zachod.jpg" alt="Zimowy zachód słońca" loading="lazy" decoding="async"><span class="discipline-number">05</span><div><p>Światło i natura</p><h3>Fotografia</h3><span>Zobacz fotografie →</span></div></a>
       </div>
-    </section>
-
-    <section class="featured section-shell" id="projekty">
-      <div class="section-head"><div><p class="eyebrow">Z bliska i w całości</p><h2>Historie projektów</h2></div><p class="section-intro">Dwie realizacje, różne przestrzenie. Zobacz gotowe prace i dodatkowe ujęcia — każde zdjęcie możesz powiększyć.</p></div>
-      <article class="project-story">
-        <div class="project-copy"><p class="project-number">01</p><p class="eyebrow">Nowe w portfolio · mural w szkole</p><h3>Słoneczniki — z sercem dla szkoły</h3><p>Malowidło przygotowane na jubileusz Publicznej Szkoły Podstawowej im. św. Urszuli Ledóchowskiej w Tymowej. Słoneczniki i roślinne detale otaczają nazwę szkoły oraz pamiątkową tablicę.</p><p>Zobacz gotową kompozycję i ujęcia z ręcznego malowania.</p></div>
-        <div class="project-image story-gallery" aria-label="Zdjęcia projektu Słoneczniki dla szkoły">
-          <a class="story-photo project-cover" href="assets/murale/sloneczniki-szkola-tymowa.jpg" data-project="sloneczniki" data-title="Słoneczniki dla szkoły w Tymowej — gotowy mural"><img src="assets/murale/sloneczniki-szkola-tymowa.jpg" alt="Gotowy mural ze słonecznikami i nazwą szkoły w Tymowej" width="1350" height="1800" loading="lazy"><span class="photo-action">Powiększ zdjęcie ↗</span></a>
-          <div class="project-thumbnails">
-            <a class="story-photo" href="assets/murale/sloneczniki-szkola-detal.jpg" data-project="sloneczniki" data-title="Słoneczniki — detal z tablicą"><img src="assets/murale/sloneczniki-szkola-detal.jpg" alt="Słoneczniki wokół pamiątkowej tablicy" width="1350" height="1800" loading="lazy"><span>Detal kompozycji ↗</span></a>
-            <a class="story-photo" href="assets/murale/sloneczniki-szkola-w-trakcie.jpg" data-project="sloneczniki" data-title="Słoneczniki — podczas malowania"><img src="assets/murale/sloneczniki-szkola-w-trakcie.jpg" alt="Joanna malująca mural na szkolnej ścianie" width="1350" height="1800" loading="lazy"><span>Podczas malowania ↗</span></a>
-          </div>
-        </div>
-        <div class="story-cta"><a class="text-link" href="murale.html">Zobacz wszystkie murale <span>→</span></a></div>
-      </article>
-      <article class="project-story reverse">
-        <div class="project-copy"><p class="project-number">02</p><p class="eyebrow">Mural we wnętrzu</p><h3>Orchidee — ściana zamieniona w ogród</h3><p>Projekt dopasowany do koloru wnętrza i naturalnego światła. Od pierwszego szkicu po wielkoformatowe kwiaty malowane bezpośrednio na ścianie.</p><ul><li>indywidualna kompozycja</li><li>malowanie ręczne</li><li>projekt dopasowany do wnętrza</li></ul></div>
-        <div class="project-image story-gallery" aria-label="Zdjęcia projektu Orchidee">
-          <a class="story-photo project-cover" href="assets/murale/orchidee-gotowy-mural.jpg" data-project="orchidee" data-title="Orchidee — gotowy mural"><img src="assets/murale/orchidee-gotowy-mural.jpg" alt="Gotowy mural z białymi orchideami" loading="lazy"><span class="photo-action">Powiększ zdjęcie ↗</span></a>
-          <div class="project-thumbnails">
-            <a class="story-photo" href="assets/murale/orchidee-z-artystka.jpg" data-project="orchidee" data-title="Orchidee — z artystką"><img src="assets/murale/orchidee-z-artystka.jpg" alt="Joanna przy muralu orchidei" loading="lazy"><span>Mural z artystką ↗</span></a>
-          </div>
-        </div>
-        <div class="story-cta"><a class="text-link" href="#kontakt">Porozmawiajmy o Twojej ścianie <span>→</span></a></div>
-      </article>
     </section>
 
     <section class="about section-shell" id="o-mnie">

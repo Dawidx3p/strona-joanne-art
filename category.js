@@ -296,3 +296,35 @@ portraitWorks.forEach((item, position) => {
   shelf.append(track);
 });
 scheduleWorkNavigation();
+
+// A curated overview and the existing centered viewing mode share the same works.
+if (category.works) {
+  const toolbar = document.createElement('div');
+  toolbar.className = 'gallery-layout';
+  toolbar.setAttribute('role', 'group');
+  toolbar.setAttribute('aria-label', 'Sposób oglądania galerii');
+  toolbar.innerHTML = '<span>Oglądaj prace</span><button type="button" data-layout="mosaic" aria-pressed="true">Galeria</button><button type="button" data-layout="focus" aria-pressed="false">Pojedynczo</button>';
+  grid.before(toolbar);
+  stages.forEach((stage, index) => {
+    if (index % 3 === 0) {
+      const module = document.createElement('div');
+      module.className = 'gallery-module';
+      module.dataset.count = String(Math.min(3, stages.length - index));
+      grid.append(module);
+    }
+    grid.lastElementChild.append(stage);
+  });
+  function setLayout(layout) {
+    document.body.classList.toggle('mosaic-view', layout === 'mosaic');
+    toolbar.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.layout === layout)));
+    document.querySelector('.gallery-hint').textContent = layout === 'mosaic'
+      ? 'Każdy kafel to osobna praca. Powiększ zdjęcie, aby obejrzeć je z bliska; małe miniatury pokazują dodatkowe ujęcia tego samego projektu.'
+      : 'Przewijaj między pracami lub wybierz tytuł z listy. Otwórz zdjęcie, aby zobaczyć je z bliska.';
+    scheduleWorkNavigation();
+  }
+  toolbar.addEventListener('click', event => {
+    const button = event.target.closest('button[data-layout]');
+    if (button) setLayout(button.dataset.layout);
+  });
+  setLayout('mosaic');
+}
